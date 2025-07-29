@@ -472,13 +472,48 @@ body {
 /* ==========================
     MARK:コース・目的
    ========================== */
+.target {
+    margin-top: 6.7rem;
+    margin-bottom: 6rem;
+    width: 100%;
+}
+.target__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 100%;
+}
+.target__container h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-left: 1.5rem;
+}
+.target__tab-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 1.6rem;
+    column-gap: 1.5rem;
+    height: 6.6rem;
+    width: 100%;
+    margin-top: 1.7rem;
+}
 .target__tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: #F0F0F0;
     color: #666;
+    font-size: 1.8rem;
+    width: 16.4rem;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
 }
 .target__tab.active {
-    cursor: pointer;
+    background-color: #F2F9FF;
+}
+.target__content-container {
+    width: 100%;
+    padding: 2.8rem 1.6rem;
     background-color: #F2F9FF;
 }
 .target__content {
@@ -486,4 +521,112 @@ body {
 }
 .target__content.show {
     display: block;
+}
+.target__content img {
+    width: 34.3rem;
+}
+.target__list li {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+.target__content--icon_arrow {
+    content: "";
+    background-image: url("/assets/image/icon_arrow_blue.svg");
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.2rem;
+    background-size: cover;
+    margin-right: 0.8rem;
+}
+.target__list li a {
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+@media (min-width: 768px) {
+    .target {
+        margin-top: 7.2rem;
+        margin-bottom: 7.5rem;
+    }
+    .target__container h2 {
+        font-size: 3.6rem;
+        margin-left: 0;
+    }
+    .target__tab-container {
+        height: 7.5rem;
+        margin-top: 3rem;
+        column-gap: 3.8rem;
+    }
+    .target__tab {
+        font-size: 2.4rem;
+        font-weight: 700;
+        width: 56rem;
+    }
+    .target__content-container {
+        width: 116rem;
+        padding: 3.2rem;
+        padding-bottom: 0;
+        margin-left: 2.1rem;
+    }
+    .target__content img {
+        width: 53.2rem;
+        margin-bottom: 0.6rem;
+    }
+    .target__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 3rem;
+        row-gap: 0.7rem;
+    }
+    .target__list li {
+        width: 53.2rem;
+    }
+    .target__content--icon_arrow {
+        width: 1.8rem;
+        height: 1.6rem;
+        margin-right: 1.1rem;
+    }
+}
+
+/* ==========================
+    MARK:費用
+   ========================== */
+.pricing {
+    margin-top: 6.4rem;
+    width: 100%;
+}
+.pricing__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pricing__container h2 {
+    margin-left: 1.9rem;
+    margin-top: 0.3rem;
+    font-size: 2.8rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1.7rem;
+}
+.pricing__table {
+    width: 100%;
+    font-size: 1.6rem;
+}
+.pricing__table tr {
+    height: 6.4rem;
+}
+.pricing__table th {
+    background-color: #F5F5F5;
+    font-size: 1.8rem;
+    padding: 1.6rem 0;
+}
+.pricing__table th,
+.pricing__table td {
+    text-align: center;
+    vertical-align: middle;
 }
