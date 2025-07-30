@@ -1,10 +1,12 @@
 html {
 	font-size: calc(10 * 100vw / 375);
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
 }
-@media (min-width:768px) {
+@media (min-width: 768px) {
     html {
     	font-size: calc(10 * 100vw / 1200);
+        scroll-padding-top: 10.1rem;
     }
 }
 @media (min-width: 1200px) {
@@ -13,10 +15,18 @@ html {
     }
 }
 body {
-    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.75;
 }
+a:hover {
+    opacity: .6;
+}
+
+
+/* ==========================
+    MARK:共通
+   ========================== */
 @media not all and (min-width:768px) {
     .pc {
         display: none;
@@ -27,6 +37,17 @@ body {
         display: none;
     }
 }
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+}
+@media (min-width:768px) {
+    .section-title {
+        font-size: 3.6rem;
+        margin-left: 0;
+    }
+}
+
 
 /* ==========================
     MARK:ヘッダー
@@ -39,7 +60,7 @@ body {
     left: 0;
     background-color: #fff;
     z-index: 1000;
-    box-shadow: 0 0.2rem 0.8rem rgb(0, 0, 0, 0.1);
+    box-shadow: 0 .2rem .8rem rgb(0, 0, 0, .1);
 }
 .header__nav {
     display: flex;
@@ -48,8 +69,7 @@ body {
     width: 100%;
 }
 .header__logo {
-    margin-left: 1.7rem;
-    margin-top: 0.4rem;
+    margin: .4rem 0 0 1.7rem;
 }
 .header__logo img {
     width: 16.4rem;
@@ -60,12 +80,12 @@ body {
     align-items: center;
     height: 7rem;
     width: 7rem;
-    background-color: #005BAC;
+    background-color: #005bac;
 }
 .header__menu-btn img {
     width: 3rem;
     height: 2.625rem;
-    margin-top: 0.4rem;
+    margin-top: .4rem;
 }
 .header__menu {
     display: none;
@@ -76,7 +96,7 @@ body {
     width: 100%;
     top: 7rem;
     right: 0;
-    background-color: #005BAC;
+    background-color: #005bac;
     color: #fff;
 }
 .header__drawer-menu ul {
@@ -85,13 +105,13 @@ body {
     list-style: none;
     font-size: 1.8rem;
 }
-.header__drawer-menu li:not(:last-child) {
+.header__drawer-menu li {
     display: flex;
     align-items: center;
     height: 6.7rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
-.header__drawer-menu li a:not(.apply-button)::before {
+.header__drawer-menu li a::before {
     content: "";
     background-image: url("/assets/image/icon_arrow_white.svg");
     display: inline-block;
@@ -105,16 +125,21 @@ body {
     text-decoration: none;
     display: block;
 }
+.header__drawer-menu li:last-child {
+    letter-spacing: .5rem;
+}
 .header__drawer-menu .apply-button {
     background-color: #fff;
-    color: #005BAC;
+    color: #005bac;
     height: 6.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 3.3rem;
-    margin: 3.2rem 0;
+    margin: 3.2rem 2.1rem 3.2rem 1.6rem;
     font-weight: 500;
+    font-size: 1.8rem;
+    text-decoration: none;
 }
 @media (min-width: 768px) {
     .header {
@@ -123,19 +148,23 @@ body {
     .header__nav {
         max-width: 120rem;
         margin: 0 auto;
-        padding: 0 1.6rem;
+        padding: 0 1.3rem 0 1.8rem;
         height: 10rem;
     }
     .header__menu-btn {
         display: none;
     }
     .header__logo {
-        margin-left: 0.3rem;
+        margin-left: .3rem;
     }
     .header__logo img {
         width: 23.78rem;
     }
     .header__menu {
+        display: flex;
+        column-gap: 4.8rem;
+    }
+    .header__menu ul {
         display: flex;
         align-items: center;
         column-gap: 4.8rem;
@@ -144,17 +173,14 @@ body {
         font-size: 2rem;
     }
     .header__menu li:nth-child(3) {
-        letter-spacing: 0.26rem;
+        letter-spacing: .26rem;
     }
     .header__menu li a {
         text-decoration: none;
         color: inherit;
     }
-    .header__menu li a:hover {
-        opacity: 0.8;
-    }
-    .header__menu li .apply-button {
-        background: linear-gradient(to right, #0271E0, #53A2F0);
+    .header__menu .apply-button {
+        background: linear-gradient(to right, #0271e0, #53a2f0);
         color: #fff;
         width: 28.1rem;
         height: 6.1rem;
@@ -163,7 +189,9 @@ body {
         justify-content: center;
         border-radius: 3.05rem;
         font-weight: 500;
-        margin-right: 0.7rem;
+        margin-right: .7rem;
+        font-size: 2rem;
+        text-decoration: none;
     }
 }
 
@@ -181,7 +209,7 @@ body {
     background-size: cover;
     background-position-x: center;
 }
-.cover__content--first {
+.cover__badge {
     display: flex;
     height: 6.86496rem;
     font-size: 1.1rem;
@@ -192,52 +220,49 @@ body {
     font-weight: 700;
     font-style: italic;
     font-size: 2.4625rem;
-    color: #F11F8D;
+    color: #f11f8d;
     line-height: 1.4;
 }
 .cover__content--strong {
     font-size: 3.5rem;
 }
-.cover__content--second {
-    margin-top: 1.1rem;
+.cover__content {
+    margin-top: .8rem;
     font-size: 2.24rem;
 }
-.cover__content--second > span {
+.cover__content > span {
     font-size: 1.4rem;
 }
 .cover__content--blue {
-    color: #005BAC;
+    color: #005bac;
     font-size: 2.5rem;
     font-weight: 800;
-    line-height: 1.35;
-    margin-top: -0.1rem;
+    line-height: 1.44;
+    margin-top: -0.8rem;
 }
 @media (min-width: 768px) {
     .cover {
         margin-top: 10.1rem;
         background-image: url("/assets/image/img_hero_pc.jpg");
-        height: 66.24rem;
-        padding: 0 1.6rem;
-        display: flex;
-        justify-content: center;
+        height: 65rem;
+        padding: 0;
     }
     .cover__container {
-        padding-top: 10.5rem;
-        padding-left: 4.92rem;
-        width: 120rem;
+        padding: 10.5rem 0 0 4.92rem;
+        max-width: 120rem;
         margin: 0 auto;
     }
-    .cover__content--first {
+    .cover__badge {
         height: 15rem;
         font-size: 2rem;
         text-align: center;
         column-gap: 2rem;
     }
-    .cover__content--first > div > span {
+    .cover__badge > div > span {
         line-height: 2.3;
     }
-    .cover__content--first > div > div {
-        margin-left: 1.12rem;
+    .cover__badge > div > div {
+        margin: -0.5rem 0 0 1.2rem;
     }
     .cover__content--pink {
         font-size: 5.4rem;
@@ -246,16 +271,16 @@ body {
     .cover__content--strong {
         font-size: 7.4rem;
     }
-    .cover__content--second {
-        margin-top: 3.2rem;
+    .cover__content {
+        margin-top: 2.7rem;
     }
-    .cover__content--second > span {
+    .cover__content > span {
         font-size: 3.3rem;
     }
     .cover__content--blue {
         font-size: 6rem;
         line-height: 1.4;
-        margin-top: 0.64rem;
+        margin-top: .2rem;
     }
 }
 
@@ -263,7 +288,7 @@ body {
     MARK:ボタンリスト
    ========================== */
 .btn-list {
-    margin-top: 2.4rem;
+    padding-top: 2.4rem;
 }
 .btn-list ul {
     display: flex;
@@ -289,17 +314,18 @@ body {
     border-radius: 2.4rem;
 }
 .btn-list--green {
-    background-color: #77CB33;
+    background-color: #77cb33;
 }
 .btn-list--orange {
-    background-color: #F6AA00;
+    background-color: #f6aa00;
 }
 .btn-list--mint {
-    background-color: #3AC8AD;
+    background-color: #3ac8ad;
 }
 @media (min-width: 768px) {
     .btn-list {
-        margin-top: -4.5rem;
+        margin-top: -3.6rem;
+        padding: 0;
     }
     .btn-list ul {
         flex-direction: row;
@@ -308,12 +334,9 @@ body {
     }
     .btn-list li a {
         width: 34rem;
-        height: 7rem;
+        height: 7.4rem;
         font-size: 2.4rem;
         border-radius: 3.5rem;
-    }
-    .btn-list li a:hover {
-        opacity: 0.8;
     }
 }
 
@@ -321,17 +344,16 @@ body {
     MARK:選ばれる3つの理由
    ========================== */
 .features {
-    margin-top: 1.9rem;
+    padding-top: 1.7rem;
 }
 .features__container {
     display: flex;
     flex-direction: column;
-    column-gap: 0.8rem;
 }
 .features h2 {
     font-size: 2.8rem;
     text-align: center;
-    margin-bottom: 1.3rem;
+    margin-bottom: .9rem;
 }
 .features h2 .features--strong {
     font-size: 4rem;
@@ -339,13 +361,13 @@ body {
 .features .features--pink {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #F11F8D;
+    color: #f11f8d;
 }
 .feature {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3.2rem;
+    margin-bottom: 3.4rem;
     padding: 0 1.6rem;
 }
 .feature img {
@@ -354,32 +376,30 @@ body {
 .feature--point {
     font-size: 2.4rem;
     font-style: italic;
-    margin-top: 0.4rem;
-    margin-left: 0.1rem;
+    padding-top: .1rem;
 }
 .feature--point .features--strong {
     font-size: 3.7rem;
+    padding-left: .2rem;
 }
 .feature--topic {
     font-size: 2rem;
     font-weight: 600;
-    margin-top: -0.1rem;
+    margin-top: -0.6rem;
     line-height: 1.4;
 }
 .feature__description p {
     margin-top: 1rem;
     font-size: 1.6rem;
-    line-height: 1.75;
 }
 @media (min-width: 768px) {
     .features {
         max-width: 120rem;
-        padding: 0 2rem;
+        padding: 6.7rem 2rem 0 2rem;
         margin: 0 auto;
-        margin-top: 7.4rem;
     }
     .features__container {
-        row-gap: 1.6rem;
+        row-gap: 1.5rem;
     }
     .features h2 {
         font-size: 3.6rem;
@@ -399,11 +419,15 @@ body {
     }
     .feature--point {
         font-size: 2.8rem;
-        margin-top: -0.2rem;
+        margin-top: -0.8rem;
+    }
+    .feature--point .features--strong {
+        font-size: 4.2rem;
+        padding-left: 0rem;
     }
     .feature--topic {
         font-size: 2.4rem;
-        margin-top: 0;
+        margin-top: -0.8rem;
         line-height: 1.7;
     }
     .feature__description p {
@@ -419,9 +443,12 @@ body {
     MARK:申し込み
    ========================== */
 .apply {
-    background-color: rgb(255, 85, 85, 0.1);
-    height: 21rem;
-    padding: 4rem 0;
+    background-color: rgb(255, 85, 85, .1);
+    height: 21.1rem;
+    padding: 3.9rem 0;
+}
+.apply--large {
+    height: 21.4rem;
 }
 .apply__container {
     display: flex;
@@ -436,36 +463,36 @@ body {
     text-align: center;
 }
 .apply__apply-button {
-    background: linear-gradient(to right, #0271E0, #53A2F0);
+    background: linear-gradient(to right, #0271e0, #53a2f0);
     color: #fff;
-    width: 30rem;
+    width: 30.4rem;
     height: 6.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 3.4rem;
     font-weight: 500;
-    margin-top: 1.3rem;
+    margin-top: 1rem;
     font-size: 2rem;
     text-decoration: none;
 }
 @media (min-width: 768px) {
     .apply {
         height: 23rem;
-        padding: 5.6rem 0;
+        padding: 5.5rem 0;
         margin-top: 3.8rem;
     }
     .apply__container {
-        width: 120rem;
+        max-width: 120rem;
+        width: 100%;
     }
     .apply__apply-button {
         width: 36rem;
         height: 7.4rem;
-        border-radius: 3.4rem;
-        margin-top: 1.9rem;
+        border-radius: 3.7rem;
+        margin-top: 1.6rem;
         font-size: 2.4rem;
-        padding-left: 2.2rem;
-        padding-top: 0.1rem;
+        padding: .1rem 0 0 2.2rem;
     }
 }
 
@@ -473,8 +500,7 @@ body {
     MARK:コース・目的
    ========================== */
 .target {
-    margin-top: 6.7rem;
-    margin-bottom: 6rem;
+    margin: 6.3rem 0 6.2rem 0;
     width: 100%;
 }
 .target__container {
@@ -501,7 +527,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
     color: #666;
     font-size: 1.8rem;
     width: 16.4rem;
@@ -509,12 +535,12 @@ body {
     border-top-right-radius: 1.2rem;
 }
 .target__tab.active {
-    background-color: #F2F9FF;
+    background-color: #f2f9ff;
 }
 .target__content-container {
     width: 100%;
     padding: 2.8rem 1.6rem;
-    background-color: #F2F9FF;
+    background-color: #f2f9ff;
 }
 .target__content {
     display: none;
@@ -527,7 +553,7 @@ body {
 }
 .target__list li {
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 .target__content--icon_arrow {
     content: "";
@@ -536,19 +562,22 @@ body {
     width: 1.4rem;
     height: 1.2rem;
     background-size: cover;
-    margin-right: 0.8rem;
+    margin-right: .8rem;
+    top: -0.2rem;
+    position: relative;
 }
 .target__list li a {
     text-decoration: none;
-    font-family: 'Noto Sans JP', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: #333;
 }
+.target__list li a span {
+    margin-top: .1rem;
+}
 @media (min-width: 768px) {
     .target {
-        margin-top: 7.2rem;
-        margin-bottom: 7.5rem;
+        margin: 6.8rem 0 7.5rem 0;
     }
     .target__container h2 {
         font-size: 3.6rem;
@@ -563,22 +592,24 @@ body {
         font-size: 2.4rem;
         font-weight: 700;
         width: 56rem;
+        margin-top: -0.8rem;
     }
     .target__content-container {
         width: 116rem;
-        padding: 3.2rem;
-        padding-bottom: 0;
+        padding: 3rem 3.2rem 0 3.2rem;
         margin-left: 2.1rem;
     }
-    .target__content img {
+    .target__content img.pc {
         width: 53.2rem;
-        margin-bottom: 0.6rem;
+        display: block;
+        overflow: hidden;
+        transition-duration: .3s;
     }
     .target__list {
         display: flex;
         flex-wrap: wrap;
         column-gap: 3rem;
-        row-gap: 0.7rem;
+        row-gap: 1.1rem;
     }
     .target__list li {
         width: 53.2rem;
@@ -588,13 +619,24 @@ body {
         height: 1.6rem;
         margin-right: 1.1rem;
     }
+    .target__img-wrap {
+        width: 53.2rem;
+        margin-bottom: 1.2rem;
+        display: block;
+        overflow: hidden;
+        border-radius: 1.2rem;
+    }
+    .target img:hover {
+        transform: scale(1.2);
+        transition-duration: .3s;
+    }
 }
 
 /* ==========================
     MARK:費用
    ========================== */
 .pricing {
-    margin-top: 6.4rem;
+    padding: 5.8rem 0 6.1rem 0;
     width: 100%;
 }
 .pricing__container {
@@ -606,27 +648,175 @@ body {
     justify-content: center;
 }
 .pricing__container h2 {
-    margin-left: 1.9rem;
-    margin-top: 0.3rem;
     font-size: 2.8rem;
     text-align: center;
-    letter-spacing: 0.5rem;
-    margin-bottom: 1.7rem;
+    letter-spacing: .5rem;
+    margin: .3rem 0 1.7rem 1.9rem;
 }
 .pricing__table {
     width: 100%;
     font-size: 1.6rem;
+    border: 3px solid #ccc;
+    border-collapse: collapse;
 }
 .pricing__table tr {
     height: 6.4rem;
 }
 .pricing__table th {
-    background-color: #F5F5F5;
-    font-size: 1.8rem;
+    background-color: #f5f5f5;
+    font-size: 1.6rem;
     padding: 1.6rem 0;
+    font-weight: inherit
+}
+.pricing__table th:last-child {
+    padding-right: 1.3rem;
 }
 .pricing__table th,
 .pricing__table td {
     text-align: center;
     vertical-align: middle;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.pricing__table th:first-child,
+.pricing__table td:first-child {
+    width: 11.6rem;
+}
+.pricing__table th:last-child,
+.pricing__table td:last-child {
+    border-right: none;
+}
+.pricing__table td {
+    padding-top: .2rem;
+}
+.pricing__table td:last-child {
+    padding-right: .5rem;
+}
+.pricing__txt--pink {
+    color: #f11f8d;
+}
+.pricing__txt--strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+@media (min-width: 768px) {
+    .pricing {
+        padding: 7rem 0 3.8rem 0;
+    }
+    .pricing__container {
+        max-width: 120rem;
+    }
+    .pricing__container h2 {
+        margin: 0 0 2.6rem .7rem;
+        font-size: 3.6rem;
+        letter-spacing: .7rem;
+    }
+    .pricing__table-container {
+        display: flex;
+        justify-content: center;
+    }
+    .pricing__table {
+        width: 60rem;
+    }
+    .pricing__table tr {
+        height: 7.7rem;
+    }
+    .pricing__table th:first-child,
+    .pricing__table td:first-child {
+        width: 14.1rem;
+    }
+    .pricing__table th {
+        font-size: 1.8rem;
+    }
+    .pricing__table td {
+        font-size: 1.8rem;
+    }
+    .pricing__txt--strong {
+        font-size: 3.2rem;
+        margin: 0 .1rem 0 .8rem;
+    }
+}
+
+/* ==========================
+    MARK:リンク
+   ========================== */
+.relation img.sp {
+    display: block;
+    width: 100%;
+    height: 17rem;
+}
+.relation__list li {
+    list-style: none;
+}
+.relation__list li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.relation__list li a span {
+    position: absolute;
+    top: 50%;
+    left: 1.6rem;
+    transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+    .relation img.pc {
+        display: block;
+        width: 100%;
+        transition-duration: .3s;
+    }
+    .relation img.sp {
+        display: none;
+    }
+    .relation__list {
+        display: flex;
+    }
+    .relation__list li a {
+        font-size: 3.2rem;
+    }
+    .relation__list li a span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .relation__img-wrap {
+        overflow: hidden;
+        width: 100%;
+    }
+    .relation img:hover {
+        transform: scale(1.2);
+        transition-duration: .3s;
+    }
+}
+
+/* ==========================
+    MARK:フッター
+   ========================== */
+.footer {
+    background-color: #ddd;
+    height: 8.3rem;
+}
+.footer__container {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright {
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    margin: .1rem 0 0 1.5rem;
+}
+@media (min-width: 768px) {
+    .footer {
+        height: 12rem;
+    }
+    .copyright {
+        margin: .1rem 0 0 0;
+    }
 }

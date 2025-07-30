@@ -20,7 +20,7 @@
     },
     "editor.guides.bracketPairs": "active", // ブラケットペア（開きかっこと閉じかっこ）にカーソルを置いているときにガイド線を表示する
     "editor.insertSpaces": true, // Tabキーを押したときにスペースを入力する
-    "editor.tabSize": 2, // Tabキーを押したときのインデント幅を半角スペース2個にする
+    "editor.tabSize": 4, // Tabキーを押したときのインデント幅を半角スペース2個にする
     "editor.unicodeHighlight.ambiguousCharacters": true, // 全角スペースなど、ASCII文字（標準的な半角英数の文字）と間違えやすい文字を強調表示する
     "editor.unicodeHighlight.includeComments": true, // コメント内の文字にUnicodeや全角スペースなどがあれば強調表示する
     "editor.wordWrap": "off", // 行を折り返さない

@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 	// メニューボタン
-	$('.header__menu-btn a').on('click', function (e) {
+	$('#js-menu-btn').on('click', function (e) {
 		e.preventDefault();
 		$('#js-drawer').slideToggle();
 	});
@@ -11,13 +11,16 @@ $(document).ready(function () {
 			if($('#js-drawer').is(':visible')) $('#js-drawer').slideToggle();
 		}
 	});
+	$('#js-drawer a').on('click', function () {
+		$('#js-drawer').slideToggle();
+	});
 
 	// タブ切り替え
-    const $tabs = $('.target__tab');
-    $tabs.on('click', function() {
-        $('.active').removeClass('active');
-        $(this).addClass('active');
-        const index = $tabs.index(this);
-        $('.target__content').removeClass('show').eq(index).addClass('show');
-    });
+	const $tabs = $('.target__tab');
+	$tabs.on('click', function() {
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			const index = $tabs.index(this);
+			$('.target__content').removeClass('show').eq(index).addClass('show');
+	});
 });
