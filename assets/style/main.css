@@ -597,7 +597,7 @@ a:hover {
     .target__content-container {
         width: 116rem;
         padding: 3rem 3.2rem 0 3.2rem;
-        margin-left: 2.1rem;
+        margin: 0 auto;
     }
     .target__content img.pc {
         width: 53.2rem;
@@ -626,7 +626,10 @@ a:hover {
         overflow: hidden;
         border-radius: 1.2rem;
     }
-    .target img:hover {
+    .target a:hover {
+        opacity: 1;
+    }
+    .target a:hover img {
         transform: scale(1.2);
         transition-duration: .3s;
     }
@@ -748,6 +751,7 @@ a:hover {
 }
 .relation__list li {
     list-style: none;
+    width: 100%;
 }
 .relation__list li a {
     display: block;
@@ -787,7 +791,10 @@ a:hover {
         overflow: hidden;
         width: 100%;
     }
-    .relation img:hover {
+    .relation a:hover {
+        opacity: 1;
+    }
+    .relation a:hover img {
         transform: scale(1.2);
         transition-duration: .3s;
     }
