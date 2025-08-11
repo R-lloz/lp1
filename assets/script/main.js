@@ -18,9 +18,9 @@ $(document).ready(function () {
 	// タブ切り替え
 	const $tabs = $('.target__tab');
 	$tabs.on('click', function() {
-			$('.active').removeClass('active');
-			$(this).addClass('active');
-			const index = $tabs.index(this);
-			$('.target__content').removeClass('show').eq(index).addClass('show');
+		$('.active').removeClass('active');
+		$(this).addClass('active');
+		const index = $tabs.index(this);
+		$('.target__content').removeClass('show').eq(index).addClass('show');
 	});
 });
